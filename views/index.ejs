@@ -1,0 +1,45 @@
+<section class="jumbotron">
+    <div class="container mt-4">
+        <h1>Selamat Datang,Di Website GKIm</h1>
+        <h5>Semoga semua mendapatkan jiwa - jiwa yang tenang dalam Tuhan Yesus</h5>
+    </div>
+</section>
+
+
+<section class="jadwal">
+    <div class="container mt-5">
+     <div class="col">
+      <h2 class="text-center">Jadwal</h2>
+      <% if (nama && role === 'admin') { %>
+          <a href="/admins/add-timetable" class="btn btn-primary">Add Jadwal</a>
+        <% } %>
+        <% if (!timetables) { %>
+            <div class="alert alert-danger fw-bold" role="alert">
+                 Jadwal Kosong <br />
+            </div>
+          <br>]
+          <% }else{ %>
+            <div class="row mt-3">
+                <% timetables.forEach((timetable) => { %>
+                <div class="col-md-6 mt-3">
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <p class="card-text"><%= timetable.ibadah %></p>
+                      <h5 class="card-title"><%= timetable.jadwal %></h5>
+                      <p class="card-text"><%= timetable.tanggal %></p>
+                      <% if (nama && role === 'admin') { %>
+                        <a href="/admins/edit-timetable/<%= timetable.jadwal %>" class="btn btn-primary">Edit Jadwal</a>
+                        <form action="/timetable?_method=DELETE" method="POST">
+                          <input type="hidden" name="jadwal" value="<%= timetable.jadwal %>"/>
+                          <button type="submit" class="btn btn-danger">Hapus Jadwal</button>
+                      </form>
+                      <% } %>
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+            </div>
+            <% } %>
+     </div>
+    </div>
+</section>

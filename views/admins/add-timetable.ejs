@@ -1,0 +1,28 @@
+<form method="post" action="/timetable">
+    <h2>Penambahan Jadwal Gereja</h2>
+    <br>
+      <div class="mb-3">
+        <label for="jadwal" class="form-label">Jadwal Gereja</label>
+        <input type="text" class="form-control" id="jadwal" name="jadwal" required/>
+      </div>
+      <div class="mb-3">
+        <label for="tanggal" class="form-label">Tanggal</label>
+        <input type="text" class="form-control" id="tanggal" name="tanggal" required/>
+      </div>
+      <div class="mb-3">
+        <label for="pembicara" class="form-label">Pembicara</label>
+        <input type="text" class="form-control" id="pembicara" name="pembicara" required/>
+        </div>
+        <div class="mb-3">
+          <label for="ibadah" class="form-label">Jenis Ibadah</label>
+          <select class="form-select" id="ibadah" name="ibadah" required>
+              <option value="umum">Ibadah Umum</option>
+              <option value="pemuda">Ibadah Pemuda</option>
+              <option value="remaja">Ibadah Remaja</option>
+              <option value="pria">Ibadah Kaum Pria</option>
+              <option value="wanita">Ibadah Kaum Wanita</option>
+              <option value="keluarga muda">Ibadah Keluarga Muda</option>
+          </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Tambah Data Jadwal Gereja</button>
+  </form>

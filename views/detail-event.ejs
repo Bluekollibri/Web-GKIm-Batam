@@ -1,0 +1,24 @@
+<h2>Detail Event</h2>
+<br/>
+<% if (!event) { %>
+<div class="alert alert-danger fw-bold" role="alert">
+  Data Event Tidak Ada <br />
+  <a href="/event" class="alert-link fw-normal">Kembali ke Event</a>
+</div>
+<% }else{ %>
+<div class="card">
+  <div class="card-body">
+  <h2 class="card-title"><%= event.nama %></h2>
+  <p class="card-date"><%= event.tanggal %></p>
+  <p class="card-text"><%= event.deskripsi %></p>
+  <% if (nama && role === 'admin') { %>
+    <a href="/admins/edit-event/<%= event.nama %>" class="btn btn-primary">Edit</a>
+    <form action="/event?_method=DELETE" method="POST">
+      <input type="hidden" name="nama" value="<%= event.nama %>"/>
+      <button type="submit" class="btn btn-danger">Hapus Event</button>
+  </form>
+  <% } %>
+  <a href="/event" class="btn btn-primary">Kembail ke Event</a>
+  </div>
+</div>
+<% } %>

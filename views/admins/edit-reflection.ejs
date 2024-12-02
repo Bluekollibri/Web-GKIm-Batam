@@ -1,0 +1,21 @@
+<form method="post" action="/reflection?_method=PUT">
+  <h2>Edit Renungan Gereja</h2>
+    <div class="mb-3">
+      <input type="hidden" name="_id" value="<%= reflection._id %>">
+      <label for="judul" class="form-label">Judul</label>
+      <input type="text" class="form-control" id="judul" name="judul" required value="<%= reflection.judul %>"/>
+    </div>
+    <div class="mb-3">
+      <label for="tanggal" class="form-label">Tanggal</label>
+      <input type="date" class="form-control" id="tanggal" name="tanggal" required value="<%=reflection.tanggal%>"/>
+    </div>
+    <div class="mb-3">
+      <label for="ayat" class="form-label">Ayat</label>
+      <input type="text" class="form-control" id="ayat" name="ayat" required value="<%= reflection.ayat %>"/>
+    </div>
+    <div class="mb-3">
+        <label for="isian" class="form-label">Isian</label>
+        <textarea class="form-control" id="isian" name = "isian" rows="3"><%= reflection.isian %></textarea>
+      </div>
+    <button type="submit" class="btn btn-primary">Tambah Data Renungan Harian</button>
+  </form>

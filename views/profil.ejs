@@ -1,0 +1,22 @@
+<h2>Profile</h2>
+            <% if (!profile) { %>
+                <div class="alert alert-danger fw-bold" role="alert">
+                   Tidak ada Data User <br />
+                   <a href="/" class="alert-link fw-normal">Kembali</a>
+                  </div>
+            <% }else{ %>
+            <div class="card">
+                <div class="card-body">
+                    <h3>Nama</h3>
+                    <p class="card-text"><%= profile.nama %></p>
+                  <h3>Email</h3>
+                  <p class="card-text"><%= profile.email %></p>
+                  <h3>Lahir</h3>
+                  <p class="card-text"><%= profile.lahir %></p>
+                  <h3>Alamat</h3>
+                  <p class="card-text"><%= profile.alamat %></p>
+                  <h3>Role</h3>
+                  <p class="card-text"><%= profile.role %></p>
+                </div>
+              </div>
+              <% } %>

@@ -1,0 +1,24 @@
+<h2>Detail Renungan</h2>
+            <% if (!reflection) { %>
+                <div class="alert alert-danger fw-bold" role="alert">
+                   Data Renungan Tidak Ada <br />
+                   <a href="/reflection" class="alert-link fw-normal">Kembali ke Renungan</a>
+                  </div>
+            <% }else{ %>
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><%= reflection.judul %></h5>
+                  <p class="card-text"><%= reflection.tanggal %></p>
+                  <p class="card-text"><%= reflection.ayat %></p>
+                  <p class="card-text"><%= reflection.isian %></p>
+                  <% if (nama && role === 'admin') { %>
+                    <a href="/admins/edit-reflection/<%= reflection.judul %>" class="btn btn-primary">Edit Renungan</a>
+                    <form action="/reflection?_method=DELETE" method="POST">
+                      <input type="hidden" name="judul" value="<%= reflection.judul %>"/>
+                      <button type="submit" class="btn btn-danger">Hapus Renungan</button>
+                  </form>
+                  <% } %>
+                  <a href="/reflection" class="btn btn-primary">Kembail ke Renungan</a>
+                </div>
+              </div>
+              <% } %>

@@ -1,0 +1,18 @@
+<form method="post" action="/timetable?_method=PUT">
+    <h2>Edit Event Gereja</h2>
+    <br>
+    <div class="mb-3">
+      <input type="hidden" name="_id" value="<%= timetable._id %>">
+      <label for="jadwal" class="form-label">Jadwal gereja</label>
+      <input type="text" class="form-control" id="jadwal" name="jadwal" required value="<%= timetable.jadwal %>"/>
+    </div>
+    <div class="mb-3">
+      <label for="tanggal" class="form-label">Tanggal</label>
+      <input type="text" class="form-control" id="tanggal" name="tanggal" required value="<%= timetable.tanggal %>"/>
+    </div>
+    <div class="mb-3">
+      <label for="jam" class="form-label">Jam</label>
+      <input type="text" class="form-control" id="jam" name="jam" required value="<%= timetable.jam %>"/>
+      </div>
+    <button type="submit" class="btn btn-primary">Update Jadwal Gereja</button>
+  </form>
